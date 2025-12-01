@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Chat - Male/Female</title>
+  <style>
+    body { font-family: Arial; text-align: center; background: #1a1a2e; color: white; }
+    video { width: 45%; height: 300px; border: 2px solid #0f3460; margin: 10px; }
+    select, button { padding: 10px 20px; font-size: 16px; margin: 10px; border-radius: 5px; }
+    button { background: #e94560; color: white; border: none; cursor: pointer; }
+    #status { margin-top: 10px; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <h1>🔥 Random Video Chat</h1>
+  <select id="gender">
+    <option value="male">👨 Male</option>
+    <option value="female">👩 Female</option>
+  </select>
+  <br>
+  <button onclick="joinChat()" id="startBtn">Start Chat</button>
+  <button onclick="nextUser()" id="nextBtn" disabled>Next ➡️</button>
+  
+  <div>
+    <video id="localVideo" autoplay muted playsinline></video>
+    <video id="remoteVideo" autoplay playsinline></video>
+  </div>
+  
+  <div id="status">Select gender and press Start</div>
+  
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
